@@ -1,8 +1,7 @@
-import { GiphysComponent } from './components/home/giphys/giphys.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
-import { HomeComponent, LoginComponent } from './components';
+import { HomeComponent, LoginComponent, GiphysComponent } from './components';
 import { AuthGuard } from './guards';
 
 const routes: Routes = [
@@ -16,11 +15,11 @@ const routes: Routes = [
     component: LoginComponent
   },
   {
-    path:'giphys',
-    component:GiphysComponent
+    path: 'giphys',
+    component: GiphysComponent,
+    canActivate: [AuthGuard]
   },
-  { path: '**', redirectTo: '' },
-  
+  { path: '**', redirectTo: '' }
 ];
 
 @NgModule({
