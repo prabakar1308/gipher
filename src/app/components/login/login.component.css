@@ -1,0 +1,21 @@
+app-login .login-section {
+  height: 100%;
+  padding: 75px 100px;
+  background-color: #e9ecef;
+}
+
+app-login .login-controls {
+  padding: 20px;
+}
+
+app-login .password {
+  margin: 20px;
+}
+
+/* app-login .login-button {
+  border-color: #3f51b5;
+}
+
+app-login .mat-flat-button:not([class*='login-button']) {
+  border-color: #3f51b5;
+} */
