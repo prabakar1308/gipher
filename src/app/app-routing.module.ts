@@ -16,7 +16,8 @@ const routes: Routes = [
   },
   {
     path: 'giphys',
-    component: GiphysComponent
+    component: GiphysComponent,
+    canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }
 ];

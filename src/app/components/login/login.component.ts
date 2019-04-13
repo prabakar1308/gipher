@@ -15,7 +15,6 @@ export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  returnUrl: string;
   error = '';
 
   constructor(
@@ -35,7 +34,7 @@ export class LoginComponent implements OnInit {
     this.authenticationService.logout();
 
     // get return url from route parameters or default to '/'
-    this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
+    // this.returnUrl = this.route.snapshot.queryParams['returnUrl'] || '/';
   }
 
   // convenience getter for easy access to form fields
@@ -45,6 +44,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
+    this.error = '';
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -57,10 +57,12 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate([this.returnUrl]);
+          this.router.navigate(['giphys']);
+          this.loading = false;
+          this.error = '';
         },
         error => {
-          this.error = error;
+          this.error = error.error.message;
           this.loading = false;
         }
       );
