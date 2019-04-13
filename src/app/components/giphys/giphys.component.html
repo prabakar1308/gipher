@@ -1,0 +1,17 @@
+<div fxLayout="row wrap" fxLayoutGap="50px">
+  <div *ngFor='let gip of giphyList'>
+    <mat-card class="card">
+      <mat-card-header>
+        <div mat-card-avatar class="example-header-image"></div>
+        <mat-card-title>{{gip.title}}</mat-card-title>
+        <mat-card-subtitle>{{gip.subtitle}}</mat-card-subtitle>
+      </mat-card-header>
+      <img class="card-image" mat-card-image [src]="gip.imgSrc" alt="Photo of a Shiba Inu">
+      <mat-card-content>
+        <p>
+          Giphy
+        </p>
+      </mat-card-content>
+    </mat-card>
+  </div>
+</div>

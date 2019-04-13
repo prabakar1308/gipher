@@ -19,8 +19,7 @@ import {
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { JwtInterceptor } from './helpers/jwt.interceptor';
-import { HomeComponent, LoginComponent } from './components';
-import { GiphysComponent } from './components/home/giphys/giphys.component';
+import { HomeComponent, LoginComponent, GiphysComponent } from './components';
 
 @NgModule({
   declarations: [AppComponent, HomeComponent, LoginComponent, GiphysComponent],
