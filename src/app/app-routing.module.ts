@@ -1,3 +1,4 @@
+import { GiphysComponent } from './components/home/giphys/giphys.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -14,7 +15,12 @@ const routes: Routes = [
     path: 'login',
     component: LoginComponent
   },
-  { path: '**', redirectTo: '' }
+  {
+    path:'giphys',
+    component:GiphysComponent
+  },
+  { path: '**', redirectTo: '' },
+  
 ];
 
 @NgModule({
