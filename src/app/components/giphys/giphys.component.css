@@ -11,3 +11,10 @@
 .card-image {
   height: 60%;
 }
+
+.giphy-container{
+  overflow: auto;
+  height: auto;
+}
+
+
