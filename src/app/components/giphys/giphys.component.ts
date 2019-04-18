@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { FormControl } from '@angular/forms';
 
 @Component({
   selector: 'app-giphys',
@@ -6,6 +7,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./giphys.component.css']
 })
 export class GiphysComponent implements OnInit {
+  searchControl = new FormControl('search');
   giphyList = [
     {
       title: 'Praba',

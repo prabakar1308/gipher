@@ -10,5 +10,8 @@ export class UserService {
 
   getAll() {
     return this.http.get<User[]>(`${config.apiUrl}/users`);
+    // return this.http.get(
+    //   `http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=khEvGzeaobaAFox2S2drkFKQhATlIyAo`
+    // );
   }
 }

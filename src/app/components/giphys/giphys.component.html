@@ -1,17 +1,23 @@
-<div fxLayout="row wrap" fxLayoutGap="50px">
-  <div *ngFor='let gip of giphyList'>
-    <mat-card class="card">
-      <mat-card-header>
-        <div mat-card-avatar class="example-header-image"></div>
-        <mat-card-title>{{gip.title}}</mat-card-title>
-        <mat-card-subtitle>{{gip.subtitle}}</mat-card-subtitle>
-      </mat-card-header>
-      <img class="card-image" mat-card-image [src]="gip.imgSrc" alt="Photo of a Shiba Inu">
-      <mat-card-content>
-        <p>
-          Giphy
-        </p>
-      </mat-card-content>
-    </mat-card>
+<div fxLayout="column" fxLayoutAlign="center center" class="default-height">
+  <div class="search-input" fxLayout="row" fxLayoutAlign="center center">
+    <input type="search" placeholder="search" class="mat-elevation-z2" [formControl]="searchControl">
+    <button mat-raised-button color="primary">Search</button>
+  </div>
+  <div fxLayout="row wrap" fxLayoutAlign="center" class="giphy-list">
+    <div *ngFor='let gip of giphyList' class="giphy-item">
+      <mat-card class="card">
+        <mat-card-header>
+          <div mat-card-avatar class="example-header-image"></div>
+          <mat-card-title>{{gip.title}}</mat-card-title>
+          <mat-card-subtitle>{{gip.subtitle}}</mat-card-subtitle>
+        </mat-card-header>
+        <img class="card-image" mat-card-image [src]="gip.imgSrc" alt="Photo of a Shiba Inu">
+        <mat-card-content>
+          <p>
+            Giphy
+          </p>
+        </mat-card-content>
+      </mat-card>
+    </div>
   </div>
 </div>

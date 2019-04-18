@@ -1,10 +1,20 @@
 .page {
+  height: 93%;
+}
+
+.navigation-header {
+  height: 7%;
+}
+
+.main-content {
   height: 100%;
 }
 
-
-mat-sidenav-container, mat-sidenav-content, mat-sidenav {
+mat-sidenav-container,
+mat-sidenav-content,
+mat-sidenav {
   height: 100%;
+  overflow: hidden;
 }
 
 mat-sidenav {
@@ -20,22 +30,23 @@ a {
   color: white;
 }
 
-a:hover, a:active{
+a:hover,
+a:active {
   color: lightgray;
 }
 
-.navigation-items{
+.navigation-items {
   list-style-type: none;
   padding: 0;
   margin: 0;
 }
 
-mat-toolbar{
+mat-toolbar {
   border-radius: 3px;
 }
 
-@media(max-width: 959px){
-  mat-toolbar{
-      border-radius: 0px;
+@media (max-width: 959px) {
+  mat-toolbar {
+    border-radius: 0px;
   }
 }
