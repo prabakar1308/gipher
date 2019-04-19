@@ -1,0 +1,26 @@
+.card {
+  max-width: 400px;
+  height: 90%;
+}
+
+.example-header-image {
+  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-size: cover;
+}
+
+.card-image {
+  height: 60%;
+}
+
+.giphy-list {
+  height: 100%;
+  overflow: auto;
+  /* padding-left: 10%; */
+}
+
+.giphy-item {
+  margin: 25px;
+  box-shadow: 3px 3px 5px 6px #ccc;
+  max-height: 40%;
+  max-width: 20%;
+}

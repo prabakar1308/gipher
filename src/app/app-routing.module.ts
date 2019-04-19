@@ -1,3 +1,4 @@
+import { BookmarkedGiphysComponent } from './components/bookmarked-giphys/bookmarked-giphys.component';
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
@@ -17,6 +18,11 @@ const routes: Routes = [
   {
     path: 'giphys',
     component: GiphysComponent,
+    canActivate: [AuthGuard]
+  },
+  {
+    path: 'favourites',
+    component: BookmarkedGiphysComponent,
     canActivate: [AuthGuard]
   },
   { path: '**', redirectTo: '' }

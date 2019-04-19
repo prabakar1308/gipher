@@ -23,9 +23,11 @@ import { AppComponent } from './app.component';
 // import { JwtInterceptor } from './helpers/jwt.interceptor';
 import { HomeComponent, LoginComponent, GiphysComponent } from './components';
 import { fakeBackendProvider, JwtInterceptor } from './helpers';
+import { BookmarkedGiphysComponent } from './components/bookmarked-giphys/bookmarked-giphys.component';
+import { GiphyListComponent } from './components/giphy-list/giphy-list.component';
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, GiphysComponent],
+  declarations: [AppComponent, HomeComponent, LoginComponent, GiphysComponent, BookmarkedGiphysComponent, GiphyListComponent],
   imports: [
     BrowserModule,
     AppRoutingModule,

@@ -1,13 +1,3 @@
-.card {
-  max-width: 400px;
-  height: 90%;
-}
-
-.example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
-  background-size: cover;
-}
-
 .search-input {
   margin: 0px 20px 20px;
 }
@@ -17,16 +7,6 @@
   margin-right: 20px;
 }
 
-.card-image {
-  height: 60%;
-}
-
 .giphy-list {
-  height: 100%;
-  overflow: auto;
-}
-
-.giphy-item {
-  margin: 10px 10px;
-  box-shadow: 3px 3px 5px 6px #ccc;
+  height: 90%;
 }

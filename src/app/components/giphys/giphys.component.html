@@ -3,7 +3,8 @@
     <input type="search" placeholder="search" class="mat-elevation-z2" [formControl]="searchControl">
     <button mat-raised-button color="primary">Search</button>
   </div>
-  <div fxLayout="row wrap" fxLayoutAlign="center" class="giphy-list">
+  <app-giphy-list [giphyList]="giphyList" class="giphy-list"></app-giphy-list>
+  <!-- <div fxLayout="row wrap" fxLayoutAlign="center" class="giphy-list">
     <div *ngFor='let gip of giphyList' class="giphy-item">
       <mat-card class="card">
         <mat-card-header>
@@ -19,5 +20,5 @@
         </mat-card-content>
       </mat-card>
     </div>
-  </div>
+  </div> -->
 </div>
