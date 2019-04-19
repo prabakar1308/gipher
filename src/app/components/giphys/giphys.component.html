@@ -1,9 +1,17 @@
 <div fxLayout="column" fxLayoutAlign="center center" class="default-height">
   <div class="search-input" fxLayout="row" fxLayoutAlign="center center">
-    <input type="search" placeholder="search" class="mat-elevation-z2" [formControl]="searchControl">
-    <button mat-raised-button color="primary">Search</button>
+    <mat-form-field class="example-full-width">
+      <input matInput (keyup.enter)="getGiphies()" placeholder="search Giphy" [formControl]="searchControl" />
+    </mat-form-field>
+
+    <button [disabled]="!searchControl.value" mat-raised-button color="primary" (click)="getGiphies()">
+      Search
+    </button>
   </div>
   <app-giphy-list [giphyList]="giphyList" class="giphy-list"></app-giphy-list>
+  <mat-paginator [disabled]="!searchControl.value" [length]="searchPageInfo.totalCount"
+    [pageSize]="searchPageInfo.pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPagination($event)">
+  </mat-paginator>
   <!-- <div fxLayout="row wrap" fxLayoutAlign="center" class="giphy-list">
     <div *ngFor='let gip of giphyList' class="giphy-item">
       <mat-card class="card">
