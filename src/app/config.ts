@@ -1,3 +1,3 @@
 export const config = {
-  apiUrl: 'http://localhost:4200'
+  apiUrl: 'http://api.giphy.com/v1'
 };

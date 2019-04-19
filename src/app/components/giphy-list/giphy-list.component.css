@@ -22,5 +22,7 @@
   margin: 25px;
   box-shadow: 3px 3px 5px 6px #ccc;
   max-height: 40%;
-  max-width: 20%;
+  min-height: 30%;
+  width: 20%;
+  /* min-width: 15%; */
 }

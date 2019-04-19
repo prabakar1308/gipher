@@ -14,4 +14,10 @@ export class UserService {
     //   `http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=khEvGzeaobaAFox2S2drkFKQhATlIyAo`
     // );
   }
+
+  getGiphys() {
+    return this.http.get<any>(
+      `http://api.giphy.com/v1/gifs/search?q=funny+cat&api_key=khEvGzeaobaAFox2S2drkFKQhATlIyAo&limit=10`
+    );
+  }
 }
