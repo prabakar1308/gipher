@@ -1,10 +1,10 @@
-import { AuthenticationService } from './services/authentication.service';
-import { BrowserModule } from '@angular/platform-browser';
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { NgModule } from '@angular/core';
-import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
-import { FlexLayoutModule } from '@angular/flex-layout';
+import { AuthenticationService } from "./services/authentication.service";
+import { BrowserModule } from "@angular/platform-browser";
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { NgModule } from "@angular/core";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
+import { HttpClientModule, HTTP_INTERCEPTORS } from "@angular/common/http";
+import { FlexLayoutModule } from "@angular/flex-layout";
 import {
   MatButtonModule,
   MatToolbarModule,
@@ -17,18 +17,25 @@ import {
   MatProgressSpinnerModule,
   MatSidenavModule,
   MatPaginatorModule
-} from '@angular/material';
+} from "@angular/material";
 
-import { AppRoutingModule } from './app-routing.module';
-import { AppComponent } from './app.component';
+import { AppRoutingModule } from "./app-routing.module";
+import { AppComponent } from "./app.component";
 // import { JwtInterceptor } from './helpers/jwt.interceptor';
-import { HomeComponent, LoginComponent, GiphysComponent } from './components';
-import { fakeBackendProvider, JwtInterceptor } from './helpers';
-import { BookmarkedGiphysComponent } from './components/bookmarked-giphys/bookmarked-giphys.component';
-import { GiphyListComponent } from './components/giphy-list/giphy-list.component';
+import { HomeComponent, LoginComponent, GiphysComponent } from "./components";
+import { fakeBackendProvider, JwtInterceptor } from "./helpers";
+import { BookmarkedGiphysComponent } from "./components/bookmarked-giphys/bookmarked-giphys.component";
+import { GiphyListComponent } from "./components/giphy-list/giphy-list.component";
 
 @NgModule({
-  declarations: [AppComponent, HomeComponent, LoginComponent, GiphysComponent, BookmarkedGiphysComponent, GiphyListComponent],
+  declarations: [
+    AppComponent,
+    HomeComponent,
+    LoginComponent,
+    GiphysComponent,
+    BookmarkedGiphysComponent,
+    GiphyListComponent
+  ],
   imports: [
     BrowserModule,
     AppRoutingModule,
@@ -49,7 +56,8 @@ import { GiphyListComponent } from './components/giphy-list/giphy-list.component
     MatTableModule,
     MatSidenavModule,
     MatToolbarModule,
-    MatPaginatorModule
+    MatPaginatorModule,
+    MatProgressSpinnerModule
   ],
   providers: [
     { provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true },

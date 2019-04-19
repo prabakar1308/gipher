@@ -7,6 +7,10 @@
   margin-right: 20px;
 }
 
+.search-input > button {
+  margin-left: 10px;
+}
+
 .giphy-list {
   height: 80%;
 }

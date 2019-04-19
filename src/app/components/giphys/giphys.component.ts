@@ -17,6 +17,7 @@ export class GiphysComponent implements OnInit {
   giphySearch: string;
   giphySearchLimit: number;
   giphySearchOffset: number;
+  loading = false;
 
   searchPageInfo = {
     pageSize: 10,
@@ -28,6 +29,7 @@ export class GiphysComponent implements OnInit {
   ngOnInit() {}
 
   getGiphies() {
+    this.loading = true;
     this.userService
       .getGiphys(this.searchControl.value, this.searchPageInfo)
       .pipe(first())
@@ -38,6 +40,7 @@ export class GiphysComponent implements OnInit {
           ...this.searchPageInfo,
           totalCount: total_count
         };
+        this.loading = false;
       });
   }
 
@@ -48,6 +51,7 @@ export class GiphysComponent implements OnInit {
       pageSize,
       pageIndex
     };
+    console.log(this.searchPageInfo);
     this.getGiphies();
   }
 }

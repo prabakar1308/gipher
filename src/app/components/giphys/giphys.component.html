@@ -1,4 +1,4 @@
-<div fxLayout="column" fxLayoutAlign="center center" class="default-height">
+<div *ngIf="!loading" fxLayout="column" fxLayoutAlign="center center" class="default-height">
   <div class="search-input" fxLayout="row" fxLayoutAlign="center center">
     <mat-form-field class="example-full-width">
       <input matInput (keyup.enter)="getGiphies()" placeholder="search Giphy" [formControl]="searchControl" />
@@ -10,23 +10,10 @@
   </div>
   <app-giphy-list [giphyList]="giphyList" class="giphy-list"></app-giphy-list>
   <mat-paginator [disabled]="!searchControl.value" [length]="searchPageInfo.totalCount"
-    [pageSize]="searchPageInfo.pageSize" [pageSizeOptions]="[5, 10, 25, 100]" (page)="onPagination($event)">
+    [pageSize]="searchPageInfo.pageSize" [pageIndex]="searchPageInfo.pageIndex" [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="onPagination($event)">
   </mat-paginator>
-  <!-- <div fxLayout="row wrap" fxLayoutAlign="center" class="giphy-list">
-    <div *ngFor='let gip of giphyList' class="giphy-item">
-      <mat-card class="card">
-        <mat-card-header>
-          <div mat-card-avatar class="example-header-image"></div>
-          <mat-card-title>{{gip.title}}</mat-card-title>
-          <mat-card-subtitle>{{gip.subtitle}}</mat-card-subtitle>
-        </mat-card-header>
-        <img class="card-image" mat-card-image [src]="gip.imgSrc" alt="Photo of a Shiba Inu">
-        <mat-card-content>
-          <p>
-            Giphy
-          </p>
-        </mat-card-content>
-      </mat-card>
-    </div>
-  </div> -->
+</div>
+<div *ngIf="loading" fxLayout="row" fxLayoutAlign="center center" class="default-height">
+  <mat-spinner></mat-spinner>
 </div>
