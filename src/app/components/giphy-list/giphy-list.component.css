@@ -3,13 +3,19 @@
   height: 90%;
 }
 
+.card > p {
+  height: 20px;
+  font-size: 14px;
+  font-family: nexablack, sans-serif;
+}
+
 .example-header-image {
-  background-image: url('https://material.angular.io/assets/img/examples/shiba1.jpg');
+  background-image: url("https://material.angular.io/assets/img/examples/shiba1.jpg");
   background-size: cover;
 }
 
 .card-image {
-  height: 60%;
+  height: 55%;
 }
 
 .giphy-list {
