@@ -8,9 +8,9 @@
       Search
     </button>
   </div>
-  <app-giphy-list [giphyList]="giphyList" class="giphy-list"></app-giphy-list>
+  <app-giphy-list [giphyList]="giphyList" [bookmark]="false" class="giphy-list"></app-giphy-list>
   <mat-paginator [disabled]="!searchControl.value" [length]="searchPageInfo.totalCount"
-    [pageSize]="searchPageInfo.pageSize" [pageIndex]="searchPageInfo.pageIndex" [pageSizeOptions]="[5, 10, 25, 100]"
+    [pageSize]="searchPageInfo.pageSize" [pageIndex]="searchPageInfo.pageIndex" [pageSizeOptions]="[12, 24, 48, 96]"
     (page)="onPagination($event)">
   </mat-paginator>
 </div>

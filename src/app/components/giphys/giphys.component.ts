@@ -1,18 +1,18 @@
-import { Component, OnInit, ViewChild } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, Validators } from '@angular/forms';
 
-import { UserService } from "./../../services/user.service";
-import { first } from "rxjs/operators";
-import { MatPaginator, PageEvent } from "@angular/material";
+import { UserService } from './../../services/user.service';
+import { first } from 'rxjs/operators';
+import { MatPaginator, PageEvent } from '@angular/material';
 
 @Component({
-  selector: "app-giphys",
-  templateUrl: "./giphys.component.html",
-  styleUrls: ["./giphys.component.css"]
+  selector: 'app-giphys',
+  templateUrl: './giphys.component.html',
+  styleUrls: ['./giphys.component.css']
 })
 export class GiphysComponent implements OnInit {
   @ViewChild(MatPaginator) paginator: MatPaginator;
-  searchControl = new FormControl("", Validators.required);
+  searchControl = new FormControl('', Validators.required);
   giphyList = [];
   giphySearch: string;
   giphySearchLimit: number;
@@ -20,7 +20,7 @@ export class GiphysComponent implements OnInit {
   loading = false;
 
   searchPageInfo = {
-    pageSize: 10,
+    pageSize: 12,
     pageIndex: 0,
     totalCount: 1
   };

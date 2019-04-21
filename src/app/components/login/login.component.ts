@@ -1,21 +1,21 @@
-﻿import { Component, ViewEncapsulation, OnInit } from "@angular/core";
-import { Router, ActivatedRoute } from "@angular/router";
-import { FormBuilder, FormGroup, Validators } from "@angular/forms";
-import { first } from "rxjs/operators";
+﻿import { Component, ViewEncapsulation, OnInit } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { first } from 'rxjs/operators';
 
-import { AuthenticationService } from "../../services";
+import { AuthenticationService } from '../../services';
 
 @Component({
-  selector: "app-login",
-  templateUrl: "./login.component.html",
-  styleUrls: ["./login.component.css"],
+  selector: 'app-login',
+  templateUrl: './login.component.html',
+  styleUrls: ['./login.component.css'],
   encapsulation: ViewEncapsulation.None
 })
 export class LoginComponent implements OnInit {
   loginForm: FormGroup;
   loading = false;
   submitted = false;
-  error = "";
+  error = '';
 
   constructor(
     private formBuilder: FormBuilder,
@@ -26,8 +26,8 @@ export class LoginComponent implements OnInit {
 
   ngOnInit() {
     this.loginForm = this.formBuilder.group({
-      username: ["", Validators.required],
-      password: ["", Validators.required]
+      username: ['', Validators.required],
+      password: ['', Validators.required]
     });
 
     // reset login status
@@ -44,7 +44,7 @@ export class LoginComponent implements OnInit {
 
   onSubmit() {
     this.submitted = true;
-    this.error = "";
+    this.error = '';
 
     // stop here if form is invalid
     if (this.loginForm.invalid) {
@@ -57,9 +57,9 @@ export class LoginComponent implements OnInit {
       .pipe(first())
       .subscribe(
         data => {
-          this.router.navigate(["giphys"]);
+          this.router.navigate(['giphys']);
           this.loading = false;
-          this.error = "";
+          this.error = '';
         },
         error => {
           this.error = error.error.message;
