@@ -1,5 +1,7 @@
+import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
+import { Register } from 'src/app/models/registerDetails';
 
 @Component({
   selector: 'app-register',
@@ -7,7 +9,7 @@ import { FormGroup, FormControl, Validators } from '@angular/forms';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  constructor() {}
+  constructor(private svc: AuthenticationService) {}
 
   ngOnInit() {}
 
@@ -21,6 +23,6 @@ export class RegisterComponent implements OnInit {
   });
 
   onRegister(register) {
-    console.log(register.value);
+    this.svc.registerUser(register.value);
   }
 }
