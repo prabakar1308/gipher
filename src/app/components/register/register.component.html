@@ -1,0 +1,41 @@
+<mat-card>
+  <mat-card-title>User Details</mat-card-title>
+  <mat-card-content>
+    <form [formGroup]="registerForm" class="row" (submit)="onRegister(registerForm)">
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="First Name" formControlName="firstName">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="Last Name" formControlName="lastName">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="User Id" formControlName="userId">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="Password" formControlName="userPassword">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="User Role" formControlName="userRole">
+        </mat-form-field>
+      </div>
+      <div class="form-group col-sm-6">
+        <mat-form-field>
+          <input matInput placeholder="User AddedDate" formControlName="userAddedDate">
+        </mat-form-field>
+      </div>
+      <mat-card-actions class="text-right">
+        <button mat-raised-button color="primary" type="submit">submit</button>
+        <button mat-raised-button color="primary" type="cancel" (click)="registerForm.reset();">Cancel</button>
+      </mat-card-actions>
+    </form>
+  </mat-card-content>
+</mat-card>

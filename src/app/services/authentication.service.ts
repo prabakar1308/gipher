@@ -5,6 +5,7 @@ import { map } from 'rxjs/operators';
 
 import { User } from '../models/user';
 import { config } from './../config';
+import { Register } from '../models/registerDetails';
 
 @Injectable({ providedIn: 'root' })
 export class AuthenticationService {
@@ -22,14 +23,18 @@ export class AuthenticationService {
     return this.currentUserSubject.value;
   }
 
-  login(username: string, password: string) {
+  login(userId: string, userPassword: string) {
     return this.http
-      .post<any>(`${config.apiUrl}/users/authenticate`, { username, password })
+      .post<User>(`${config.apiUrl}/api/v1/auth/login`, {
+        userId,
+        userPassword
+      })
       .pipe(
         map(user => {
           // login successful if there's a jwt token in the response
           if (user && user.token) {
             // store user details and jwt token in local storage to keep user logged in between page refreshes
+            user.username = userId;
             localStorage.setItem('currentUser', JSON.stringify(user));
             this.currentUserSubject.next(user);
           }
@@ -43,5 +48,9 @@ export class AuthenticationService {
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
     this.currentUserSubject.next(null);
+  }
+
+  registerUser(register: Register) {
+    this.http.post<any>(`${config.apiUrl}/api/v1/auth/register`, register);
   }
 }
