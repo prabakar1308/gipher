@@ -50,7 +50,15 @@ export class AuthenticationService {
     this.currentUserSubject.next(null);
   }
 
-  registerUser(register: Register) {
-    this.http.post<any>(`${config.apiUrl}/api/v1/auth/register`, register);
+  registerUser(register) {
+    return this.http
+      .post<User>(`${config.apiUrl}/api/v1/auth/register`, {
+        register
+      })
+      .pipe(
+        map(user => {
+          console.log('Registered Sucessfully');
+        })
+      );
   }
 }

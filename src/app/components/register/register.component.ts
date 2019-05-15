@@ -1,7 +1,7 @@
 import { AuthenticationService } from './../../services/authentication.service';
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, Validators } from '@angular/forms';
-import { Register } from 'src/app/models/registerDetails';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-register',
@@ -9,7 +9,7 @@ import { Register } from 'src/app/models/registerDetails';
   styleUrls: ['./register.component.css']
 })
 export class RegisterComponent implements OnInit {
-  constructor(private svc: AuthenticationService) {}
+  constructor(private svc: AuthenticationService, private route: Router) {}
 
   ngOnInit() {}
 
@@ -23,6 +23,8 @@ export class RegisterComponent implements OnInit {
   });
 
   onRegister(register) {
-    this.svc.registerUser(register.value);
+    this.svc.registerUser(register.value).subscribe(data => {
+      this.route.navigate(['login']);
+    });
   }
 }
