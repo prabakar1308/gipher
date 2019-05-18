@@ -2,7 +2,8 @@
   <div *ngFor='let gip of giphyList' class="giphy-item">
     <mat-card class="card">
       <p>{{gip.title}}</p>
-      <img class="card-image" mat-card-image [src]="gip.images.original.url" alt="Photo of a Shiba Inu">
+      <img class="card-image" mat-card-image src="{{ gip.bookmark ? imageURL : gip.images.original.url}}"
+        alt="Photo of a Shiba Inu">
       <mat-card-content fxLayoutAlign="center">
         <button mat-raised-button color="primary" [disabled]="isGiphyExists(gip)"
           (click)="onBookmark(gip)">{{ bookmark ? 'Remove' : 'Bookmark' }}</button>
