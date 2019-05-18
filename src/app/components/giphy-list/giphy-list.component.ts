@@ -15,6 +15,13 @@ export class GiphyListComponent implements OnInit {
 
   ngOnInit() {}
 
+  getImageUrl(giphy) {
+    if (this.bookmark) {
+      return giphy.imageUrl;
+    }
+    return giphy.images.original.url;
+  }
+
   onBookmark(giphy) {
     const {
       id,
