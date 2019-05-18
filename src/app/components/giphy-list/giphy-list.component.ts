@@ -15,9 +15,22 @@ export class GiphyListComponent implements OnInit {
 
   ngOnInit() {}
 
-  onBookmark(giphy: giphyObject) {
-    const userName = JSON.parse(localStorage.getItem('currentUser')).username;
-    giphy.userName = userName;
+  onBookmark(giphy) {
+    const {
+      id,
+      title,
+      images: {
+        original: { url }
+      }
+    } = giphy;
+    JSON.parse(localStorage.getItem('currentUser'));
+    const { username } = JSON.parse(localStorage.getItem('currentUser'));
+    const giphyReq = {
+      userId: username,
+      title,
+      imageId: id,
+      imageUrl: url
+    };
 
     //  const favourites = JSON.parse(localStorage.getItem('favoriteGiphies'));
     //  let newFavourites = [];
@@ -36,7 +49,7 @@ export class GiphyListComponent implements OnInit {
       //   ...JSON.parse(localStorage.getItem('favoriteGiphies')),
       //   giphy
       // ];
-      this.svc.saveBookmarked(giphy).subscribe(response => {
+      this.svc.saveBookmarked([giphyReq]).subscribe(response => {
         console.log('bookmarked sucessfully');
       });
     }

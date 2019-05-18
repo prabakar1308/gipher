@@ -1,6 +1,6 @@
 export class giphyObject {
-  id: string;
+  imageId: string;
   imageUrl: string;
   title: string;
-  userName: string;
+  userId: string;
 }

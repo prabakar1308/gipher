@@ -10,7 +10,8 @@ import { User } from '../models/user';
 export class GiphyService {
   constructor(private http: HttpClient) {}
 
-  saveBookmarked(giphy: giphyObject) {
+  saveBookmarked(giphy: giphyObject[]) {
+    console.log(giphy);
     return this.http.post<any>(`${config.apiUrl}/saveMultipleFiles`, giphy);
   }
 
