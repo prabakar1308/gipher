@@ -23,8 +23,10 @@ export class GiphyListComponent implements OnInit {
   }
 
   onBookmark(giphy) {
+    JSON.parse(localStorage.getItem('currentUser'));
+    const { username } = JSON.parse(localStorage.getItem('currentUser'));
     if (this.bookmark) {
-      this.svc.deleteBookmarked(giphy.id).subscribe(response => {
+      this.svc.deleteBookmarked(giphy.id, username).subscribe(response => {
         console.log('Removed Sucessfully');
       });
     } else {
@@ -35,8 +37,7 @@ export class GiphyListComponent implements OnInit {
           original: { url }
         }
       } = giphy;
-      JSON.parse(localStorage.getItem('currentUser'));
-      const { username } = JSON.parse(localStorage.getItem('currentUser'));
+
       const giphyReq = {
         userId: username,
         title,

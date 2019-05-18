@@ -15,8 +15,10 @@ export class GiphyService {
     return this.http.post<any>(`${config.apiUrl}/saveMultipleFiles`, giphy);
   }
 
-  deleteBookmarked(giphyId: string) {
-    return this.http.delete<any>(`${config.apiUrl}/delete?giphyId=${giphyId}`);
+  deleteBookmarked(giphyId: string, userName: string) {
+    return this.http.delete<any>(
+      `${config.apiUrl}/delete/${giphyId}/${userName}`
+    );
   }
 
   getFavoriteGiphys(userId: string) {
